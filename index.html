@@ -3,145 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#140c1c">
-  <meta name="description" content="BOLO AI — Your personal AI English-speaking coach.">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="BOLO AI - Your personal English speaking coach">
   <title>BOLO AI — English Coach</title>
 
-  <!-- Load CSS -->
   <link rel="stylesheet" href="./src/style.css">
+
+  <style>
+    .portrait-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .portrait-stage .portrait {
+      width: 180px;
+      height: 180px;
+    }
+
+    .portrait-stage .portrait-face {
+      width: 100%;
+      height: 100%;
+    }
+
+    .page-section {
+      scroll-margin-top: 20px;
+    }
+
+    .brand-icon {
+      flex-shrink: 0;
+    }
+
+    .tutor-card {
+      margin-top: 20px;
+    }
+
+    .chat-card {
+      margin-top: 22px;
+    }
+
+    .language-menu {
+      padding: 9px;
+      border: 1px solid rgba(241, 200, 121, .3);
+      border-radius: 10px;
+      color: #ffe7ac;
+      background: #211d2d;
+    }
+
+    .message-status {
+      min-height: 20px;
+      color: #7de3b0;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="app">
+<div class="app">
 
-    <header>
-      <div class="logo">B<span>•</span></div>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">B<span>•</span></div>
+      <div>
+        <h1>BOLO AI</h1>
+        <p>Talk Naturally. Connect Instantly.</p>
+      </div>
+    </div>
+    <span class="status-pill">
+      <span class="online-dot"></span> AI COACH
+    </span>
+  </header>
 
-      <div class="brand">
-        <b>BOLO AI</b>
-        <small>Talk Naturally. Connect Instantly.</small>
+  <!-- HOME -->
+  <main>
+
+    <section class="hero page-section" id="home">
+      <div class="eyebrow">YOUR PERSONAL ENGLISH COACH</div>
+      <h2>Speak English<br><span>with confidence.</span></h2>
+      <p>Practice real conversations. Make mistakes safely. Improve every day.</p>
+    </section>
+
+    <!-- TUTOR -->
+    <section class="tutor-card page-section" id="tutor">
+
+      <div class="tutor-header">
+        <div class="tutor-name">
+          <div>
+            <h3>Meet Your AI Tutor</h3>
+            <p><span class="online-dot"></span>Your English partner</p>
+          </div>
+        </div>
+
+        <select id="language" class="language-menu" aria-label="Help language">
+          <option value="Hindi">Hindi help</option>
+          <option value="Bengali">Bengali help</option>
+          <option value="English">English only</option>
+        </select>
       </div>
 
-      <button id="lang" type="button">Hindi help</button>
-    </header>
-
-    <main>
-
-      <!-- HERO SECTION -->
-      <section class="hero">
-        <img
-          class="portrait"
-          id="portrait"
-          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85"
-          alt="English learning coach"
-        >
-
-        <div class="badge">● YOUR AI TUTOR</div>
-
-        <div class="heroText">
-          <small>YOUR PERSONAL ENGLISH COACH</small>
-
-          <h1>
-            Speak English<br>
-            <em>with confidence.</em>
-          </h1>
-
-          <p>
-            Practice real conversations. Make mistakes safely.
-            Improve your English every day.
-          </p>
-
-          <div class="tags">
-            <span>🇮🇳 Hindi support</span>
-            <span>🎯 Smart corrections</span>
-            <span>🎙️ Voice practice</span>
-          </div>
+      <div class="portrait-stage">
+        <div class="portrait" id="portrait">
+          <img
+            class="portrait-photo"
+            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=85"
+            alt="English learning session"
+          >
         </div>
-      </section>
+        <div class="portrait-caption">Your AI English Coach · Ready to help</div>
+      </div>
 
-      <!-- LIVE PRACTICE -->
-      <section class="practice">
+      <div class="voice-controls">
+        <button id="start" class="primary-button">
+          🎙️
+          <span>
+            <b>Start talking</b>
+            <small>Live voice conversation</small>
+          </span>
+        </button>
 
-        <div class="heading">
-          <div>
-            <small>LIVE PRACTICE</small>
-            <h2>Let's talk!</h2>
-          </div>
+        <button id="stop" class="stop-button" disabled>
+          End session
+        </button>
 
-          <span class="status" id="status">Ready when you are</span>
-        </div>
+        <p id="status" class="status-text">Ready when you are</p>
+        <p id="hint" class="hint">
+          Tap Start talking to begin your speaking practice.
+        </p>
+      </div>
+    </section>
 
-        <div id="chat" class="chat">
+    <!-- CHAT -->
+    <section class="section page-section" id="practice">
+      <div class="section-heading">
+        <h3>Let's talk!</h3>
+        <span>English practice</span>
+      </div>
+
+      <div class="chat-card">
+        <div class="chat" id="chat">
           <article>
             <b>BOLO AI</b>
-            <p>
-              Hi! I'm your English coach. Tap “Start talking” and
-              tell me about your day. I'll help you speak naturally. 😊
-            </p>
+            <p>Hi! 😊 I'm your English coach. Tell me about your day, and I'll help you speak English naturally.</p>
           </article>
         </div>
 
-        <div class="controls">
-          <button id="start" class="start" type="button">
-            🎙
-            <span>
-              <b>Start talking</b>
-              <small>Live voice conversation</small>
-            </span>
-          </button>
-
-          <button id="stop" type="button" disabled>
-            End session
-          </button>
-        </div>
-
-        <div class="divider">OR TYPE A MESSAGE</div>
-
-        <form id="form">
+        <form id="form" class="chat-form">
           <input
             id="input"
             type="text"
             placeholder="How do I introduce myself?"
             autocomplete="off"
+            required
           >
-          <button type="submit" aria-label="Send message">➤</button>
+          <button class="send-button" type="submit" aria-label="Send message">➤</button>
         </form>
+      </div>
 
-        <p class="hint" id="hint">
-          Your microphone is only used after you tap Start talking.
-        </p>
+      <div class="message-status" id="messageStatus" aria-live="polite"></div>
+    </section>
 
-      </section>
+    <!-- FEATURES -->
+    <section class="section page-section" id="learn">
+      <div class="section-heading">
+        <h3>Your learning tools</h3>
+        <span>Learn every day</span>
+      </div>
 
-      <!-- FEATURES -->
-      <section class="features">
+      <div class="feature-grid">
 
-        <article>
-          <div>🗣️ <b>Fluency tricks</b></div>
-          <p>Learn to think in English, not word-by-word.</p>
+        <article class="feature-card">
+          <div class="feature-icon">🗣️</div>
+          <h4>Fluency Tricks</h4>
+          <p>Learn to think in English instead of translating every word.</p>
         </article>
 
-        <article>
-          <div>✍️ <b>Gentle corrections</b></div>
+        <article class="feature-card">
+          <div class="feature-icon">✍️</div>
+          <h4>Gentle Corrections</h4>
           <p>Understand your mistakes and learn the correct sentence.</p>
         </article>
 
-        <article>
-          <div>💼 <b>Real-life English</b></div>
-          <p>Practise English for interviews, travel, work and daily life.</p>
+        <article class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h4>Real-life English</h4>
+          <p>Practise for interviews, travel, work and daily life.</p>
         </article>
 
-      </section>
+        <article class="feature-card">
+          <div class="feature-icon">🇮🇳</div>
+          <h4>Hindi & Bengali Help</h4>
+          <p>Understand English explanations in your preferred language.</p>
+        </article>
 
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      BOLO AI · Practice a little every day.
-    </footer>
+    <!-- PROFILE -->
+    <section class="section page-section" id="profile">
+      <div class="section-heading">
+        <h3>Your profile</h3>
+        <span>Keep improving</span>
+      </div>
 
-  </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌟</div>
+        <h4>Every day is a new start</h4>
+        <p>Practise a little every day. Your confidence will grow with time.</p>
+      </div>
+    </section>
 
-  <!-- Load JavaScript -->
-  <script type="module" src="./src/main.js"></script>
+  </main>
+
+  <footer style="padding:25px 0;text-align:center;color:#a5a2b5;font-size:12px">
+    BOLO AI · Talk Naturally. Connect Instantly.
+  </footer>
+
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" aria-label="Main navigation">
+  <button class="active" data-target="home">
+    <span>⌂</span>Home
+  </button>
+  <button data-target="tutor">
+    <span>🎙️</span>Speak
+  </button>
+  <button data-target="learn">
+    <span>📚</span>Learn
+  </button>
+  <button data-target="profile">
+    <span>👤</span>Profile
+  </button>
+</nav>
+
+<!-- MAIN JS -->
+<script type="module" src="./src/main.js"></script>
+
+<script>
+  // Bottom navigation
+  document.querySelectorAll(".bottom-nav button").forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".bottom-nav button")
+        .forEach(item => item.classList.remove("active"));
+
+      button.classList.add("active");
+
+      const section = document.getElementById(button.dataset.target);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+</script>
+
 </body>
-            </html>
+                                                                          </html>
