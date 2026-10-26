@@ -1,5 +1,147 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#140c1c"><title>BOLO AI — English Coach</title></head><body><div id="app">
-<header><div class="logo">B<span>•</span></div><div class="brand"><b>BOLO AI</b><small>Talk Naturally. Connect Instantly.</small></div><button id="lang">Hindi help</button></header>
-<main><section class="hero"><img class="portrait" id="portrait" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="English coach"><div class="badge">● YOUR AI TUTOR</div><div class="heroText"><small>YOUR PERSONAL ENGLISH COACH</small><h1>Speak English<br><em>with confidence.</em></h1><p>Practice real conversations. Make mistakes safely. Improve every day.</p><div class="tags"><span>🇮🇳 Hindi support</span><span>🎯 Smart corrections</span><span>🎙️ Voice practice</span></div></div></section>
-<section class="practice"><div class="heading"><div><small>LIVE PRACTICE</small><h2>Let's talk!</h2></div><span class="status" id="status">Ready when you are</span></div><div id="chat" class="chat"><article><b>BOLO AI</b><p>Hi! I'm your English coach. Tap “Start talking” and tell me about your day. I'll help you speak naturally. 😊</p></article></div><div class="controls"><button id="start" class="start">🎙 <span><b>Start talking</b><small>Live voice conversation</small></span></button><button id="stop" disabled>End session</button></div><div class="divider">OR TYPE A MESSAGE</div><form id="form"><input id="input" placeholder="How do I introduce myself?" autocomplete="off"><button>➤</button></form><p class="hint" id="hint">Your microphone is only used after you tap Start talking.</p></section>
-<section class="features"><article>🗣️ <b>Fluency tricks</b><p>Think in English, not word-by-word.</p></article><article>✍️ <b>Gentle corrections</b><p>Understand why a sentence is wrong.</p></article><article>💼 <b>Real-life English</b><p>Interviews, travel, work and daily life.</p></article></section></main><footer>BOLO AI · Practice a little every day.</footer></div><script type="module" src="/src/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#140c1c">
+  <meta name="description" content="BOLO AI — Your personal AI English-speaking coach.">
+  <title>BOLO AI — English Coach</title>
+
+  <!-- Load CSS -->
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <header>
+      <div class="logo">B<span>•</span></div>
+
+      <div class="brand">
+        <b>BOLO AI</b>
+        <small>Talk Naturally. Connect Instantly.</small>
+      </div>
+
+      <button id="lang" type="button">Hindi help</button>
+    </header>
+
+    <main>
+
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <img
+          class="portrait"
+          id="portrait"
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85"
+          alt="English learning coach"
+        >
+
+        <div class="badge">● YOUR AI TUTOR</div>
+
+        <div class="heroText">
+          <small>YOUR PERSONAL ENGLISH COACH</small>
+
+          <h1>
+            Speak English<br>
+            <em>with confidence.</em>
+          </h1>
+
+          <p>
+            Practice real conversations. Make mistakes safely.
+            Improve your English every day.
+          </p>
+
+          <div class="tags">
+            <span>🇮🇳 Hindi support</span>
+            <span>🎯 Smart corrections</span>
+            <span>🎙️ Voice practice</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIVE PRACTICE -->
+      <section class="practice">
+
+        <div class="heading">
+          <div>
+            <small>LIVE PRACTICE</small>
+            <h2>Let's talk!</h2>
+          </div>
+
+          <span class="status" id="status">Ready when you are</span>
+        </div>
+
+        <div id="chat" class="chat">
+          <article>
+            <b>BOLO AI</b>
+            <p>
+              Hi! I'm your English coach. Tap “Start talking” and
+              tell me about your day. I'll help you speak naturally. 😊
+            </p>
+          </article>
+        </div>
+
+        <div class="controls">
+          <button id="start" class="start" type="button">
+            🎙
+            <span>
+              <b>Start talking</b>
+              <small>Live voice conversation</small>
+            </span>
+          </button>
+
+          <button id="stop" type="button" disabled>
+            End session
+          </button>
+        </div>
+
+        <div class="divider">OR TYPE A MESSAGE</div>
+
+        <form id="form">
+          <input
+            id="input"
+            type="text"
+            placeholder="How do I introduce myself?"
+            autocomplete="off"
+          >
+          <button type="submit" aria-label="Send message">➤</button>
+        </form>
+
+        <p class="hint" id="hint">
+          Your microphone is only used after you tap Start talking.
+        </p>
+
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features">
+
+        <article>
+          <div>🗣️ <b>Fluency tricks</b></div>
+          <p>Learn to think in English, not word-by-word.</p>
+        </article>
+
+        <article>
+          <div>✍️ <b>Gentle corrections</b></div>
+          <p>Understand your mistakes and learn the correct sentence.</p>
+        </article>
+
+        <article>
+          <div>💼 <b>Real-life English</b></div>
+          <p>Practise English for interviews, travel, work and daily life.</p>
+        </article>
+
+      </section>
+
+    </main>
+
+    <footer>
+      BOLO AI · Practice a little every day.
+    </footer>
+
+  </div>
+
+  <!-- Load JavaScript -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+            </html>
